@@ -97,7 +97,10 @@ def main():
     ]
     while True:
         for link in links:
-            threading.Thread(target=tryRequest, args=(link,)).start()
+            try:
+                threading.Thread(target=tryRequest, args=(link,)).start()
+            except:
+                print("Thread Error")
 
 
 
